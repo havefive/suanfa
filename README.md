@@ -25,3 +25,25 @@ function findByTwoWay(data,value){
 }
 console.log(findByTwoWay([1,2,3,4,5,6],3));
 ```
+2. 冒泡排序算法
+
+思路：设排序序列的记录个数为n，进行n-1次遍历，每次遍历从开始位置依次往后比较前后相邻元素，这样较大的元素往后移，n-1次遍历结束后，序列有序。
+```
+//冒泡排序算法
+function sortByBubble(data){
+	var flag = true;
+	for(var i = 0;i < data.length-1 && flag;i++){
+		flag = false;
+		for(var j=0;j<data.length-1-i;j++){
+			if(data[j]>data[j+1]){
+				var temp = data[j];
+				data[j] = data[j+1];
+				data[j+1] = temp;
+				flag = true;
+			}
+		}
+
+	}
+	console.log(data);
+}
+```
