@@ -46,4 +46,28 @@ function sortByBubble(data){
 	}
 	console.log(data);
 }
+sortByBubble([5,4,2,4,1,4,6]);
+
+```
+3. 简单选择排序算法
+ 思路：设排序序列的记录个数为n，进行n-1次选择，每次在n-i+1(i = 1,2,...,n-1)个记录中选择关键字最小的记录作为有效序列中的第i个记录。
+```
+function sortBySelect(data){
+	for(var i=0;i<data.length-1;i++){
+		var minIndex = i;
+		for(var j=i+1;j<data.length;j++)
+		{
+			if(data[j]<data[minIndex]){
+				minIndex = j;
+			}
+		}
+		if(minIndex!=i){
+			var temp = data[minIndex];
+			data[minIndex] = data[i];
+			data[i] = temp;
+		}
+	}
+	console.log(data);
+}
+// sortBySelect([1,3,6,2,4,5]);
 ```
