@@ -71,3 +71,25 @@ function sortBySelect(data){
 }
 // sortBySelect([1,3,6,2,4,5]);
 ```
+4. 插入排序
+  思路：是将一个记录插入到已排好序的有序表中，从而得到一个新的、记录数增1的有序表。
+```
+//插入排序
+function sorByInsert(data){
+
+	var j;
+	for(var i=1;i<data.length;i++){
+		var temp = data[i];
+		j = i-1;
+		while(j>-1&&temp<data[j]){
+			data[j+1] = data[j];
+			j--;
+		}
+		data[j+1] = temp;
+	}
+
+	console.log(data);
+}
+// sorByInsert([1,2,3,6,4,2,5])
+```
+  
