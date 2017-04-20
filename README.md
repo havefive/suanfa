@@ -117,5 +117,45 @@ sortByXier([49,38,65,97,76,13,27,49,55,04]);
 
 思路：将待排序序列分为两部分，对每部分递归地应用归并排序，在两部分都排好序后进行合并。
 ```
-//todo
+//归并排序
+function sortByMerge(data){
+	if(data.length>1){
+		var mid = Math.floor(data.length/2);
+		for(var data1=[],i=0;i<mid;i++){
+			data1.push(data[i]);
+		}
+		for(var data2=[],i=mid;i<data.length;i++){
+			data2.push(data[i]);
+		}
+		return merge(sortByMerge(data1),sortByMerge(data2));
+
+	}else{
+		return data;
+	}
+}
+
+
+
+function merge(arr1,arr2){
+	var result = [],count1=0,count2=0,count3=0;
+	while(count1<arr1.length&&count2<arr2.length){
+		if(arr1[count1]<arr2[count2]){
+			result.push(arr1[count1++]);
+		}else{
+			result.push(arr2[count2++]);
+		}
+
+	}
+	while(count1<arr1.length){
+		result.push(arr1[count1++]);
+	}
+	while(count2<arr2.length){
+		result.push(arr2[count2++]);
+	}
+	return result;
+}
+
+console.log(sortByMerge([1,5,4,2,9,8]));
+
+
 ```
