@@ -134,8 +134,6 @@ function sortByMerge(data){
 	}
 }
 
-
-
 function merge(arr1,arr2){
 	var result = [],count1=0,count2=0,count3=0;
 	while(count1<arr1.length&&count2<arr2.length){
@@ -158,4 +156,10 @@ function merge(arr1,arr2){
 console.log(sortByMerge([1,5,4,2,9,8]));
 
 
+```
+7. 快速排序
+
+思路：在待排序的序列中选择一个称为主元的元素，将数组分为两部分，使得第一部分中的所有元素都小于或等于主元，而第二部分中的所有元素都大于主元，然后对两部分递归地应用快速排序算法
+```
+//todo
 ```
